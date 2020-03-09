@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.78" >
+
+        <TabHost
+            android:id="@+id/tabHost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_x="0dp"
+            android:layout_y="0dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </TabWidget>
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="DADOS" >
+
+                        <RelativeLayout
+                            android:id="@+id/dadosLabelFiliais"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/labelTextCnpjSelecionado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="CNPJ SELECIONADO: "
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/labelTextCadFilial"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/labelTextCnpjSelecionado"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Nova Filial (CNPJ): " />
+
+                            <EditText
+                                android:id="@+id/editTextValueCnpjFilial"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/labelTextCnpjSelecionado"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_toRightOf="@+id/labelTextCadFilial"
+                                android:background="@color/white"
+                                android:digits="0123456789"
+                                android:hint="cnpj"
+                                android:inputType="number"
+                                android:maxLength="20"
+                                android:singleLine="true"
+                                android:textColor="@color/input_login"
+                                android:textColorHint="@color/input_login_hint" />
+
+                            <Button
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="INCLUIR"
+                                android:id="@+id/btnIncluirFilial"
+                                android:layout_below="@+id/labelTextCadFilial" />
+
+                            <TextView
+                                android:id="@+id/labelTextFiliais"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/btnIncluirFilial"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="Filiais CNPJ" />
+
+                            <ListView
+                                android:id="@+id/listaDadosPessoa"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/labelTextFiliais"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="PRODUTOS" >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/topViewBotoes">
+
+                            <TableLayout
+                                android:id="@+id/tableLayoutCampos"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:stretchColumns="0,1">
+
+                                <TableRow
+                                    android:id="@+id/tableRow1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/idSpinnerEmpresa"
+                                        android:maxHeight="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_column="0"
+                                        android:padding="5dp"
+                                        android:layout_marginRight="5dp"
+                                        android:background="@color/colorGray"></Spinner>
+
+                                    <Spinner
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/idSpinnerCategoria"
+                                        android:layout_column="1"
+                                        android:layout_marginTop="5dp"
+                                        android:maxHeight="10dp"
+                                        android:padding="5dp"
+                                        android:background="@color/colorGray"></Spinner>
+
+                                </TableRow>
+
+                            </TableLayout>
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnCancelarPedido"
+                                android:layout_below="@+id/tableLayoutCampos"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:textSize="30dp"
+                                android:text=" Cancelar Pedido "/>
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnAtualizarLista"
+                                android:layout_below="@+id/btnCancelarPedido"
+                                android:textStyle="bold"
+                                android:textSize="30dp"
+                                android:text=" Atualizar lista "/>
+
+
+
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="PRODUTOS"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:id="@+id/txtLabelProdutos"
+                            android:layout_below="@+id/topViewBotoes"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"/>
+
+
+                        <ListView
+                            android:id="@+id/ListaProdutos"
+                            android:layout_below="@+id/txtLabelProdutos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:dividerHeight="5dp">
+                        </ListView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/tab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="HISTÓRICO" >
+
+                        <RelativeLayout
+                            android:id="@+id/viewCabecalhoHistPedidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:text="Mostrar Detalhes"
+                                android:visibility="gone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnListaDetalhesPedido" />
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="204dp"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="10dp"
+                                android:visibility="gone"
+                                android:text="TAB 3 CABEÇALHO"/>
+
+                            <ListView
+                                android:id="@+id/ListaHistPedidos"
+                                android:layout_below="@+id/textView3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="10dp"
+                                android:dividerHeight="5dp">
+                            </ListView>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/viewListaHistPedidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <Button
+                                android:text="Mostrar Cabeçalho"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/btnListaCabecalhoPedido" />
+
+                            <TextView
+                                android:id="@+id/textViewDetalhes3"
+                                android:layout_width="204dp"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="10dp"
+                                android:text="TAB 3 DETALHES"/>
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </RelativeLayout>
+
+
+
+
+
+    <ProgressBar
+        android:layout_below="@+id/tab_host"
+        android:id="@+id/progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

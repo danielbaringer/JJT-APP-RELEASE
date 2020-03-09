@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">JJT Importadora</string>
+    <string name="hint_email">Login</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_name">Nome Completo</string>
+    <string name="btn_login">Acessar</string>
+    <string name="btn_perm">Atualizar identidade do meu aparelho</string>
+    <string name="msg_saudacao_telas">Gardem Cloud :: </string>
+    <string name="title_activity_seleciona_centro">SelecionaCentroActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
